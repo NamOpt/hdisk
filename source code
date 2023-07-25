@@ -1,0 +1,225 @@
+v1
+@echo off
+title HDisk - Basic to Advanced Disk Rescuer - lightweight - very high rescue
+color 4f
+echo You have to run script with Admin permission.
+echo If you have run script with Admin permission,press a random key.
+pause
+cls
+color 8f
+echo HDisk Check 1.1 01:43 2023-7-15(bulid zz34)
+echo Using DiskPart and Chkdsk by Mircosoft Corp(c),Microsoft and HDisk promise to PROTECT user and drive data.
+echo WE ARE NOT RESPONSIBLE FOR HARD DRIVES.(for maunal mode)
+echo Use this tool properly and wisely.
+echo For Windows 2000 and above.
+echo Newbies or experts can do it too!
+echo If you feel this software is good, support me and this program with "a cup of coffee" on my web ;)
+echo Forbidden to edit without my permission then you don't have the right to do such dirty things. What if you want your own software? Message me via email!
+echo namb20994@gmail.com
+echo Have a great day and I hope that my software and YOU can save your data and drive! :)
+echo Choice an option.
+echo 1.Default Windows repair sector(normal mode)
+echo 2.Select a hard disk to checking and repair sector(normal mode,all the files run on this disk must to close)
+echo 3.Default Windows repair sector and corrupt files(advanced mode,restart required)
+echo 4.Select a hard disk to checking and repair sector and corrupt files(advanced mode,all the files run on this disk must to close)
+echo 5.Manual mode (beta) (not required admin permission,using diskpart,expert only)
+echo 6.Other tool(beta)
+CHOICE /C 123456 /M "Enter your choice:"
+
+IF ERRORLEVEL 6 GOTO m
+IF ERRORLEVEL 5 GOTO meow
+IF ERRORLEVEL 4 GOTO dsk
+IF ERRORLEVEL 3 GOTO chk
+IF ERRORLEVEL 2 GOTO select
+IF ERRORLEVEL 1 GOTO win
+
+:win
+cls
+echo ====Default Windows repair sector====
+chkdsk
+goto end2
+
+:select
+cls
+echo =Select a hard disk to checking and repair sector=
+set /p aomi=Type a letter dsik to checking disk.
+chkdsk %aomi%
+GOTO end2
+
+:chk
+cls
+echo =Default Windows repair sector and corrupt files=
+chkdsk /f /r /x
+goto end
+
+:dsk
+cls
+echo =Select a hard disk to checking and repair sector and corrupt files=
+set /p bruh=Type a letter disk to checking disk.
+chkdsk %bruh% /f /r /x
+goto end2
+
+:end
+echo Done! You have to restart to repair. 
+pause
+exit
+
+:end2
+echo Done! Close it.
+pause
+exit
+
+:meow
+echo ============================mamunal tools===================================
+ECHO WE ARE NOT RESPONSIBLE FOR HARD DRIVES.
+echo Use this mode wisely, otherwise your hard drive may be "bricked".
+echo Use exit command to halt this script.
+echo For example:exit
+echo Using admin permission then Diskpart will be included here.
+echo Using elevated permission then Diskpart will split into a separate window.
+echo Diskpart is running...
+diskpart
+goto end2
+
+:m
+echo ========other tool=================
+echo 1.Command Prompt
+echo 2.Microsoft Drive Optimizer
+echo 3.exit
+CHOICE /C 123 /M "Enter your choice:"
+
+IF ERRORLEVEL 1 GOTO anbatukum
+IF ERRORLEVEL 2 GOTO end2
+IF ERRORLEVEL 3 GOTO seven
+
+
+:anbatukum
+echo Use this mode wisely.
+echo type dfrgui.exe to run
+cmd
+
+v2
+@echo off
+title HDisk - Basic to Advanced Disk Rescuer - lightweight - very high rescue
+color 4f
+echo You have to run script with Admin permission.
+echo If you have run script with Admin permission,press a random key.
+echo Membership in the local Administrators group, or equivalent, is the minimum required to run chkdsk. To open a command prompt window as an administrator, right click Command prompt in the Start menu, and then click Run as administrator.
+pause
+cls
+color 8f
+echo ----------------------------------------------------------
+echo HDisk CheckFix 2.0 03:16 2023-7-24(bulid 33xx)
+echo By Nam
+echo Copyright (c) HDisk .Inc 2023. All rights reserved.
+echo Email namb20994@gmail.com
+echo ----------------------------------------------------------
+echo info:
+echo 1.Using DiskPart and Chkdsk by Mircosoft Corp(c),Microsoft and HDisk promise to PROTECT user and drive data.
+echo -WE ARE NOT RESPONSIBLE FOR HARD DRIVES.(for maunal mode)
+echo -Use this tool properly and wisely.
+echo -For Windows 2000 and above.
+echo -Newbies or experts can do it too!
+echo 2.If you feel this software is good, support me and this program with "a cup of coffee" on my web ;)
+echo -Forbidden to edit without my permission then you don't have the right to do such dirty things. What if  echo you want your own software? Message me via email!
+echo -Have a great day and I hope that my software and YOU can save your data and drive! :)
+echo 3.Chkdsk can be used only for local disks. The command cannot be used with a local drive letter that has been redirected over the network.
+pause
+cls
+color 60
+echo HDisk Warning!!!
+echo Before use,reading:
+echo Interrupting chkdsk is not recommended. However, canceling or interrupting chkdsk should not leave the volume any more corrupt than it was before chkdsk was run. Running chkdsk again checks and should repair any remaining corruption on the volume.
+echo During checking or repair, the disc or USB stick may heat up. PLEASE DO NOT repeat this action as it may cause the DISK or USB stick to overheat at any time.
+pause
+cls
+color 8f
+echo HDisk CheckFix 2.0
+echo Choice an option.
+echo 1.Default Windows checking sector(normal mode)
+echo 2.Select a hard disk to checking and repair sector(normal mode,all the files run on this disk must to close)
+echo 3.Default Windows repair sector and corrupt files(advanced mode,restart required)
+echo 4.Select a hard disk to checking and repair sector and corrupt files(advanced mode,all the files run on this disk must to close)
+echo 5.Manual mode (not required admin permission,using diskpart,expert only)
+echo 6.Other tool
+echo 7.Repair sector and corrupt files on USB (normal mode,all the files run on this USB must to close)
+CHOICE /C 1234567 /M "Enter your choice:"
+
+IF ERRORLEVEL 7 goto gara
+IF ERRORLEVEL 6 GOTO m
+IF ERRORLEVEL 5 GOTO meow
+IF ERRORLEVEL 4 GOTO dsk
+IF ERRORLEVEL 3 GOTO chk
+IF ERRORLEVEL 2 GOTO select
+IF ERRORLEVEL 1 GOTO win
+
+:win
+cls
+echo ====Default Windows repair sector====
+chkdsk
+goto end2
+
+:select
+cls
+echo =Select a hard disk to checking and repair sector=
+set /p aomi=Type a letter disk to checking disk.
+chkdsk %aomi% /f
+GOTO end2
+
+:chk
+cls
+echo =Default Windows repair sector and corrupt files=
+chkdsk /f /r /x
+goto end
+
+:dsk
+cls
+echo =Select a hard disk to checking and repair sector and corrupt files=
+set /p bruh=Type a letter disk to checking disk.
+chkdsk %bruh% /f /r /x
+goto end2
+
+:end
+echo Done! You have to restart to repair. 
+pause
+exit
+
+:end2
+echo Done! Close it.
+pause
+exit
+
+:meow
+echo ============================mamunal tools===================================
+ECHO WE ARE NOT RESPONSIBLE FOR HARD DRIVES.
+echo Use this mode wisely, otherwise your hard drive may be "bricked".
+echo Use exit command to halt this script.
+echo For example:exit
+echo Using admin permission then Diskpart will be included here.
+echo Using elevated permission then Diskpart will split into a separate window.
+echo Diskpart is running...
+diskpart
+goto end2
+
+:m
+echo ========other tool=================
+echo 1.Command Prompt
+echo 2.Microsoft Drive Optimizer
+echo 3.exit
+CHOICE /C 123 /M "Enter your choice:"
+
+IF ERRORLEVEL 1 GOTO anbatukum
+IF ERRORLEVEL 2 GOTO end2
+IF ERRORLEVEL 3 GOTO seven
+
+
+:anbatukum
+echo Use this mode wisely.
+echo type dfrgui.exe to run Microsoft Drive Optimizer.
+cmd
+
+:gara
+echo ==Repair sector and corrupt files on USB==
+set /p oplg=Type a letter for USB to checking disk.
+chkdsk %oplg% /offlinescanandfix /f
+goto end2
